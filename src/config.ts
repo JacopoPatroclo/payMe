@@ -1,7 +1,7 @@
-import * as dotenv from 'dotenv'
-import Configuration from './interfaces/Configuration'
+import * as dotenv from 'dotenv';
+import Configuration from './interfaces/Configuration';
 
-dotenv.config()
+dotenv.config();
 let configObject: Configuration;
 
 if (process.env.NODE_ENV === 'prod' || process.env.NODE_ENV === 'production') {
@@ -15,8 +15,12 @@ if (process.env.NODE_ENV === 'prod' || process.env.NODE_ENV === 'production') {
     DB_USER: process.env.DB_USER,
     DB_NAME: process.env.DB_NAME,
     JWT_SECRET: process.env.JWT_SECRET,
-    JWT_EXPIRE: process.env.JWT_EXPIRE
-  }
+    JWT_EXPIRE: process.env.JWT_EXPIRE,
+    STRIPE_SK: process.env.STRIPE_SK,
+    STRIPE_PK: process.env.STRIPE_PK,
+    PAYPAL_CLIENT_ID: process.env.PAYPAL_CLIENT_ID,
+    PAYPAL_SECRET: process.env.PAYPAL_SECRET
+  };
 } else {
   // development configuration object
   configObject = {
@@ -28,8 +32,12 @@ if (process.env.NODE_ENV === 'prod' || process.env.NODE_ENV === 'production') {
     DB_USER: process.env.DB_USER,
     DB_NAME: process.env.DB_NAME,
     JWT_SECRET: 'Development secret is for boyz...',
-    JWT_EXPIRE: '1h'
-  }
+    JWT_EXPIRE: '1h',
+    STRIPE_SK: process.env.STRIPE_SK,
+    STRIPE_PK: process.env.STRIPE_PK,
+    PAYPAL_CLIENT_ID: process.env.PAYPAL_CLIENT_ID,
+    PAYPAL_SECRET: process.env.PAYPAL_SECRET
+  };
 }
 
 export default configObject;

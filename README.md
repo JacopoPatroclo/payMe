@@ -64,6 +64,11 @@ Il controller e il router dell'autenticazione si trovano all'interno di `./src/a
 
 La gestione degli errori avviene attraverso la classe ErrorHandler in middleware/errorHandler.ts.
 
+## Features da aggiungere
+
+1. Aggiungere l'invio di un email al momento del pagamento avvenuto ad un amministratore
+2. Un modo di consultare il record per un admin
+
 ## Support
 
 Please [open an issue](https://github.com/fraction/readme-boilerplate/issues/new) for support.

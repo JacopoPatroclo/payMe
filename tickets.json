@@ -1,0 +1,12 @@
+[
+  {
+    "nome": "test",
+    "sottotitolo": "Un test molto bello",
+    "prezzo": "2000"
+  },
+  {
+    "nome": "test1",
+    "sottotitolo": "Un test molto bello",
+    "prezzo": "1500"
+  }
+]

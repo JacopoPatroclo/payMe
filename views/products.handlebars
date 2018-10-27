@@ -1,0 +1,19 @@
+<div>
+  <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+  {{#each tickets}}
+  <div class="myItem">
+    <h1>{{nome}}</h1>
+    <p>{{sottotitolo}}</p>
+    <p>{{prezzo}}</p>
+    <form action="/api/v1/products/pay/stripe/{{prezzo}}/{{nome}}" method="POST">
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{../stripe_pk}}"
+        data-amount="{{prezzo}}" data-name="Stripe.com" data-description="Example charge" data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+        data-locale="auto" data-zip-code="true">
+        </script>
+    </form>
+    <form action="/api/v1/products/pay/paypal/{{prezzo}}/{{nome}}" method="POST">
+      <button type="submit">PayPal</button>
+    </form>
+  </div>
+  {{/each}}
+</div>
